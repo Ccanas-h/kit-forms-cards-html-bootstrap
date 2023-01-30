@@ -491,3 +491,57 @@
     </div>
   </div>
 </div>
+
+
+<!-- Form 5 Card Crear Periodo Academico Diseño -->
+
+  <div class="card bg-light">
+      <div class="card-footer">
+      <h2> Periodos académicos </h2>
+  </div>
+
+      <div class="card-header">
+          
+          <div class="row">
+          <h5 class="card-title text-muted mt-2">Aqui puedes crear los semestres que necesites para el año. Un semestre, dos, trimestre, etc. </h5>
+      </div>
+      <div class="row mt-2">
+              <button class="btn btn-secondary"
+                  >Crear periodo académico</button>
+      </div>
+      </div>
+
+
+      <div class="card-body" >
+          <form #a="ngForm" > 
+              <div class="form-row">
+
+                  <div class="form-group col-sm-2">
+                      <label for="periodoSelect">Periodo</label>
+                      <select class="form-control" ngModel name="periodo" ngModel>
+                          <option *ngFor="let p of tiposEnsenanza" [label]="p"
+                              [value]="p"></option>
+                      </select>
+                  </div>
+                  <div class="form-group col-sm-2">
+                      <label for="fechaInicialInput">Fecha Inicial</label>
+                      <input type="date" class="form-control" name="fechaInicial" ngModel>
+                  </div>
+                  <div class="form-group col-sm-2">
+                      <label for="fechaFinalInput">Fecha Final</label>
+                      <input type="date" class="form-control" name="fechaFinal" ngModel>
+                  </div>
+                  <div class="form-group col-sm-1">
+                      <label class="text-center"><b>&nbsp;</b></label>
+                      <button type="submit" class="btn btn-outline-success form-control"><i class="fas fa-plus-square"></i> Crear</button>
+                  </div>
+                  <div class="form-group col-sm-2">
+                      <label class="text-center"><b>&nbsp;</b></label>
+                      <button type="button" class="btn btn-outline-secondary form-control" 
+                      ><i class="fas fa-ban"></i> Cancelar</button>
+                  </div>
+              </div>
+          </form>
+
+      </div>
+  </div>

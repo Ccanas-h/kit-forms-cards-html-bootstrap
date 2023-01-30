@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AdminLteFormsComponent } from './modules/admin-lte-forms/admin-lte-forms.component';
 
@@ -10,7 +10,8 @@ import { AdminLteFormsComponent } from './modules/admin-lte-forms/admin-lte-form
     AdminLteFormsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
