@@ -36,7 +36,17 @@
               "node_modules/admin-lte/plugins/fullcalendar/main.min.css",
               "node_modules/sweetalert2/src/sweetalert2.scss" 
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/admin-lte/plugins/jquery/jquery.min.js",
+              "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "node_modules/admin-lte/dist/js/adminlte.min.js"
+            ],
+
+            "allowedCommonJsDependencies": [
+              "jquery",
+              "file-saver"
+            ]
+            
           },
           "configurations": {
             "production": {

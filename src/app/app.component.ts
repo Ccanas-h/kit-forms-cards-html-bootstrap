@@ -48,4 +48,11 @@ export class AppComponent {
   ];
 
 
+  cursosCreados: string[] = [];
+  crearAsignatura_Taller(a: any){
+ console.log("a ", a);
+    this.cursosCreados.push(a.value.nombre);
+  }
+
+
 }
