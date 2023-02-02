@@ -661,17 +661,30 @@
 
                 <div class="card-body">
 
+
+                  <!-- TODO ¿Porque no me funciono este custom switch y si mas abajo? Extraño -->
+                    <!-- 
                     <div class="form-group">
                         <div class="form-check" *ngFor="let plan of planificacionesAll; index as i">
                             <div class="custom-control custom-switch custom-switch-on-success">
-                                <input type="checkbox" class="custom-control-input"
-                                    [disabled]="lockTipos" id="customSwitch{{i}}" [value]="plan" 
+                                <input type="checkbox"  name="plan"  [(ngModel)]="plan.selected"
+                                     id="customSwitch{{i}}" [value]="plan" 
                                     (change)="seleccionTipoEnsenanza(plan, $event)">
                                 <label class="custom-control-label" for="customSwitch{{i}}"> <span
                                         class="mr-2">{{i}}</span> {{plan.tipoEnsenanza}}</label>
                             </div>
                         </div>
+                    </div> -->
+
+                    <div class="form-group" *ngFor="let plan of planificacionesAll; index as i"> 
+                    <div class="custom-control custom-control-lg custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck123{{i}}" name="plan"  [(ngModel)]="plan.selected"
+                      (change)="seleccionTipoEnsenanza(plan, $event)"  [disabled]="lockTipos">
+                      <label class="custom-control-label" for="customCheck123{{i}}">{{plan.tipoEnsenanza}}</label>
                     </div>
+                  </div>
+
+
 
                 </div>
 
