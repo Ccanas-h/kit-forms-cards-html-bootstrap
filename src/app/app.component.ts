@@ -7,7 +7,66 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web-dental';
-  ngOnInit(): void {}
+  ngOnInit(): void {
+ /* Aqui se rellena el PlanificacionesALL con todos los tipos de enseñanza */
+ if (this.planificacionesAll.length == 0) {
+  this.tiposEnsenanza.forEach((element) => {
+    let planificacion = new Planificacion();
+    planificacion.tipoEnsenanza = element;
+    this.planificacionesAll.push(planificacion);
+  });
+}
+
+  }
+
+
+
+  tiposEnsenanza: string[] = [
+    "Educación Parvularia",
+    "Enseñanza Básica",
+    "Enseñanza Media",
+  ];
+  lockTipos = false;
+  lockPlanificaciones = false;
+
+  planificacionesAll: Planificacion[] = [];
+  planificaciones: Planificacion[] = [];
+
+  seleccionTipoEnsenanza(plan: any, event: any) {
+    let check = event.target.checked;
+    plan.selected = check;
+    // console.log("plan.selected ", plan.selected);
+    this.guardarTiposEnsenanza();
+  }
+
+  guardarTiposEnsenanza() {
+    this.planificaciones = this.planificacionesAll.filter(
+      (plan) => plan.selected
+    );
+  }
+
+  updatePlanificaciones(event: any) {
+    let tipo = event.currentTarget.id.split("-")[0];
+    let dato: string = event.currentTarget.id.split("-")[1];
+    let check = event.target.checked;
+
+    this.planificaciones.forEach((plan) => {
+      if (plan.tipoEnsenanza == tipo) {
+        if (dato == "oa") plan.oa = check;
+        else if (dato == "indicador") plan.indicador = check;
+        else if (dato == "habilidad") plan.habilidad = check;
+        else if (dato == "conocimiento") plan.conocimiento = check;
+        else if (dato == "actitud") plan.actitud = check;
+        else if (dato == "dua") plan.dua = check;
+        else if (dato == "inicio") plan.inicio = check;
+        else if (dato == "desarrollo") plan.desarrollo = check;
+        else if (dato == "cierre") plan.cierre = check;
+      }
+    });
+
+    console.log("this.planificaciones ", this.planificaciones);
+  }
+
 
   //Form 1
   cursos = ['1ro Basico, 2do Basico, 3ro Basico, 4to Basico, 5to Basico'];
@@ -26,7 +85,7 @@ export class AppComponent {
   ];
 
   //Form 2
-  tiposEnsenanza: string[] = [
+  tiposEnsenanza2: string[] = [
     'Educación Parvularia',
     'Enseñanza Básica',
     'Educación Básica Adultos (Sin oficios)',
@@ -55,4 +114,21 @@ export class AppComponent {
   }
 
 
+}
+
+
+
+export class Planificacion {
+  // id? = id;
+  tipoEnsenanza: string | undefined;
+  selected: boolean = false;
+  oa: false = false;
+  indicador: false = false;
+  habilidad: false = false;
+  conocimiento: false = false;
+  actitud: false = false;
+  dua: false = false;
+  inicio: false = false;
+  desarrollo: false = false;
+  cierre: false = false;
 }
