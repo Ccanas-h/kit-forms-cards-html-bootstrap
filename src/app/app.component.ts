@@ -108,9 +108,22 @@ export class AppComponent {
 
 
   cursosCreados: string[] = [];
-  crearAsignatura_Taller(a: any){
- console.log("a ", a);
-    this.cursosCreados.push(a.value.nombre);
+
+
+  
+
+
+  crearAsignatura_Taller(form: any){
+ console.log("form.value ", form.value);
+
+    let nombre = form.value.nombre;
+    let liquido = form.value.liquido;
+    let bruto = form.value.bruto;
+
+
+
+
+    // this.cursosCreados.push(a.value.nombre);
   }
 
 
