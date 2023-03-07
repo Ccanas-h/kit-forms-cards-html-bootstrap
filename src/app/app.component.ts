@@ -1,11 +1,47 @@
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
+// declare var $: JQueryStatic;
+import { delay, Observable, of } from "rxjs";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
+  template:  `
+    <div *ngIf="data$ | async as data; else loading">
+      <p>{{ data }}</p>
+    </div>
+    <ng-template #loading>
+      <p>Loading...</p>
+    </ng-template>
+  `
 })
 export class AppComponent {
+
+  data$: Observable<string>;
+
+  constructor() {
+    this.data$ = of('Ejemplo de asincronía usando Observable. Emula la espera de la carga de una API').pipe(delay(3000));
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   title = 'web-dental';
   ngOnInit(): void {
  /* Aqui se rellena el PlanificacionesALL con todos los tipos de enseñanza */

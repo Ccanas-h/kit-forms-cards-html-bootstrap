@@ -39,7 +39,8 @@
             "scripts": [
               "node_modules/admin-lte/plugins/jquery/jquery.min.js",
               "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
-              "node_modules/admin-lte/dist/js/adminlte.min.js"
+              "node_modules/admin-lte/dist/js/adminlte.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
             ],
 
             "allowedCommonJsDependencies": [
@@ -114,7 +115,7 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
           }
         }
       }

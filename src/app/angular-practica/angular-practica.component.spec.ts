@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminLteFormsComponent } from './admin-lte-forms.component';
+import { AngularPracticaComponent } from './angular-practica.component';
 
-describe('AdminLteFormsComponent', () => {
-  let component: AdminLteFormsComponent;
-  let fixture: ComponentFixture<AdminLteFormsComponent>;
+describe('AngularPracticaComponent', () => {
+  let component: AngularPracticaComponent;
+  let fixture: ComponentFixture<AngularPracticaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminLteFormsComponent ]
+      declarations: [ AngularPracticaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminLteFormsComponent);
+    fixture = TestBed.createComponent(AngularPracticaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

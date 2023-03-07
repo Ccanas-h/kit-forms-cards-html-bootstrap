@@ -22,6 +22,21 @@
               class="fas fa-marker"></i>&nbsp;Form Custom-Switch</a>
   </li>
 
+
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#Angular-tips" role="tab"><i
+            class="fas fa-marker"></i>&nbsp;Angular</a>
+  </li>
+
+  <div *ngIf="data$ | async as data; else loading">
+    <p>{{ data }}</p>
+  </div>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+
+  
+
     </ul>
   </div>
 
@@ -992,6 +1007,30 @@
 
 
             </div>
+
+
+
+
+
+
+
+
+
+            <div class="tab-pane fade  show p-4" id="custom-switch-config" role="tabpanel">
+
+
+
+
+
+
+
+
+
+
+              </div>
+
+
+
 
 
       
