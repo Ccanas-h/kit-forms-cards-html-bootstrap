@@ -1,0 +1,21 @@
+<p>angular-practica works!</p>
+
+
+<ul>
+    <!-- La siguiente forma permite que Angular por su propia cuenta cree la Suscripcion y luego la destruya el mismo. Por lo 
+    tanto no debemos crear una suscripcion en el ts. Solo basta con crear un observable usando el operador de rxjs (of)
+    De la sigueinte forma:
+        user$ = of(this.users); -->
+    <li *ngFor="let user of user$ | async">{{user.name}}</li>    
+    <!-- <li *ngFor="let user of users">{{user.name}}</li>     -->
+<ul>
+
+<hr>
+
+<div class="form-group">
+    <label for="exampleAsync1">Probando Observable Users$ con Async directo en HTML</label>
+    <input type="text" class="form-control" id="exampleAsync1" 
+            (change)="pruebaUserAsync($event)" name="tipo" 
+    
+    >
+  </div>

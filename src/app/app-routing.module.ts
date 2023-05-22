@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularPracticaRoutingModule } from './angular-practica/angular-practica-routing.module';
-import { AngularPracticaComponent } from './angular-practica/angular-practica.component';
+import { AngularPracticaComponent } from './angular-practica/practica/angular-practica.component';
 import { AppComponent } from './app.component';
 
 

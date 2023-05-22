@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AngularPracticaComponent } from './angular-practica/angular-practica.component';
+import { AngularPracticaComponent } from './angular-practica/practica/angular-practica.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
